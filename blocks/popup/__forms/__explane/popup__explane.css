@@ -1,0 +1,9 @@
+.popup__explane{
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 9px;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+.elements__text{
+    color: #000000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 21px;
+    margin-top: 22px;
+    max-width: 200px;
+}

@@ -1,0 +1,26 @@
+.profile__image{
+    background-image: url(../../../../../image/Vector.png);
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-position: center;
+    margin-left: 18px;
+    margin-top: 35px;
+    padding: 7px 7px;
+    border: 1px solid white;
+    height: 24px;
+    width: 24px;
+}
+
+@media screen and (max-width: 680px) {
+    .profile__image{
+        width: 18px;
+        height: 18px;
+        padding: 4.25px 4.25px;
+        margin-left: 11px;
+        margin-top: 29px;
+    }
+}
+
+.profile__image:hover{
+opacity: 0.6;
+}
