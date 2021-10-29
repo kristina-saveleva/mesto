@@ -1,5 +1,5 @@
 .profile__image{
-    background-image: url(../../../../../image/Vector.png);
+    background-image: url(../../../image/Edit.svg);
     background-repeat: no-repeat;
     background-color: #000;
     background-position: center;
@@ -22,5 +22,5 @@
 }
 
 .profile__image:hover{
-opacity: 0.6;
+    opacity: 0.6;
 }
