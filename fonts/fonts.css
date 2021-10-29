@@ -18,3 +18,10 @@
     font-style: normal;
     font-weight: bold;
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url(Inter-Medium.otf);
+    font-style: normal;
+    font-weight: 500;
+}
