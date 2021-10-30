@@ -12,7 +12,7 @@
     border-radius: 2px;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 930px) {
     .profile__button{
         margin: 0 auto;
         padding: 22px 140px;

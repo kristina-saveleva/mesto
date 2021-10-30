@@ -7,11 +7,9 @@
     padding: 34px 36px 37px;
     box-sizing: border-box;
 }
-
+    
 @media screen and (max-width: 900px) {
-    .popup__body{
-        top: 0;
-        left: 0;
+    .popup__form{
         padding: 25px 22px;
         max-width: 282px;
     }

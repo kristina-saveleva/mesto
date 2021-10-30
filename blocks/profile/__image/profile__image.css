@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 930px) {
     .profile__image{
         width: 18px;
         height: 18px;
