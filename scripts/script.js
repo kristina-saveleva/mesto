@@ -4,8 +4,8 @@ const popupOpenButtonElement = document.querySelector('.profile__image');
 let nameProf = document.querySelector('.profile__text');
 let jobProf = document.querySelector('.profile__subtitle');
 let formElement = document.querySelector('.popup__forms');
-let nameInput = formElement.querySelector('.popup__name');
-let jobInput = formElement.querySelector('.popup__explane');
+let nameInput = formElement.querySelector('.popup__explane_name');
+let jobInput = formElement.querySelector('.popup__explane_job');
 let popupSave = document.querySelector('.popup__form');
 
 //Функция открытия попапа с занесением текущих данных из профиля в value

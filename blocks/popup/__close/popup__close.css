@@ -1,5 +1,5 @@
 .popup__close{
-    background-image: url(../../../image/Close\ Icon.svg);
+    background-image: url(../../../image/CloseIcon.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 32px;
@@ -9,6 +9,7 @@
     right: -40px;
     border: 0;
     background-color: black;
+    cursor: pointer;
 }
 
 .popup__close:hover{
