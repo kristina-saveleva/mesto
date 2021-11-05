@@ -77,6 +77,7 @@ const addimage = function() {
 
 //Функция нажатия кнопки лайк
 
+djuygduyseg
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
