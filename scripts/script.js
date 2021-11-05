@@ -74,46 +74,34 @@ const closePopupCard = function() {
 };
 
 //Функция добавления карточек
-const addimage = function(nameValue, imageValue) {
-    console.log("ВЫзвана функция addimage")
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('.elements__cards');
+function addCards (imagePlaceValue, namePlaceValue) {
+    const elementsTemplate = document.querySelector('#elements-template').content;
+    const cardsElement = elementsTemplate.querySelector('.elements__cards').cloneNode(true);
+    cardsElement.querySelector('.elements__text').textContent = namePlaceValue;
+    cardsElement.querySelector('.elements__rectangle').textContent = imagePlaceValue;
+    cardsElement.querySelector('.elements__like').addEventListener('click', function(evt){
+        console.log('kfqr');
+        evt.target.classList.toggle('elements__like_active');
+        });
 
-
-//Создаем элемент h2 и кладем его в переменную
-const elementText = document.createElement('h2');
-
-//Добавляем элементу класс
-elementText.classList.add('.elements__text');
-
-//Добавляем текст
-elementText.textContent = nameValue;
-
-const elementImage = document.createElement('img');
-elementImage.classList.add('.elements__rectangle');
-elementImage.src = imageValue;
-
-//Функция нажатия кнопки лайк
-const likeElement = document.createElement('button');
-likeElement.classList.add('.elements__like');
-
-cardContainer.append(elementText, elementImage, likeElement);
-cardsContainer.append(cardContainer);
+    cardsContainer.append(cardsElement);
 }
 
-// saveButton.addEventListener('click', 
+// Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
-    console.log('Любимушкин код');
+    console.log('TRY код');
     event.preventDefault();
     const namePlace = document.querySelector('.popup__place_name_pp');
     const imagePlace = document.querySelector('.popup__place_photo_pp');
 
-    addimage(namePlace.value, imagePlace.value)
+    addCards(namePlace.value, imagePlace.value)
 
     namePlace.value = '';
     imagePlace.value = '';
     closePopupCard();
 };
+
+
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
