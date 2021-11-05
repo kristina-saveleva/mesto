@@ -4,6 +4,8 @@ const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__image');
 const popupOpenCardElement = document.querySelector('.profile__button')
 const popupCloseCardElement = popupcardElement.querySelector('.popup__closecard');
+const saveButton = document.querySelector('.popup__savecard');
+const cardsContainer = document.querySelector('.elements');
 let nameProf = document.querySelector('.profile__text');
 let jobProf = document.querySelector('.profile__subtitle');
 let formElement = document.querySelector('.popup__forms');
@@ -71,16 +73,44 @@ const closePopupCard = function() {
 };
 
 //Функция добавления карточек
-const addimage = function() {
-    
-}
+const addimage = function(nameValue, imageValue) {
+    const cardContainer = document.createElement('div');
+    cardContainer = classList.add('.elements__cards');
+
+
+//Создаем элемент h2 и кладем его в переменную
+const elementText = document.createElement('h2');
+
+//Добавляем элементу класс
+elementText.classList.add('.elements__text');
+
+//Добавляем текст
+elementText.textContent = nameValue;
+
+const elementImage = document.createElement('img');
+elementImage.classList.add('.elements__rectangle');
+elementImage.textContent = imageValue;
 
 //Функция нажатия кнопки лайк
+const likeElement = document.createElement('button');
+likeElement.classList.add('.elements__like');
 
-djuygduyseg
+cardContainer.append(elementText, elementImage, likeElement);
+cardsContainer.append(cardContainer);
+}
+
+saveButton.addEventListener('click', function() {
+    const namePlace = document.querySelector('.popup__place_name_pp');
+    const imagePlace = document.querySelector('.popup__place_photo_pp');
+
+    namePlace.value = '';
+    imagePlace.value = '';
+    closePopupCard();
+})
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 popupSave.addEventListener('submit', formSubmitHandler);
 popupOpenCardElement.addEventListener('click', openPopupCard);
 popupCloseCardElement.addEventListener('click', closePopupCard);
+saveButton.addEventListener('submit', formSubmitHandler);
