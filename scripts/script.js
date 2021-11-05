@@ -60,10 +60,11 @@ function formSubmitHandler (event) {
     closePopup();
 };
 
-//Функция открытия попапа карточек
+//Функция открытия попапа
 const openPopupCard = function() {
     popupcardElement.classList.add('popup_opened');
-};
+}
+
 
 //Функция закрытия попапа
 const closePopupCard = function() {
@@ -72,7 +73,7 @@ const closePopupCard = function() {
 
 //Функция добавления карточек
 const addimage = function() {
-    
+
 }
 
 //Функция нажатия кнопки лайк
