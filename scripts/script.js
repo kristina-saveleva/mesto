@@ -4,7 +4,7 @@ const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__image');
 const popupOpenCardElement = document.querySelector('.profile__button')
 const popupCloseCardElement = popupcardElement.querySelector('.popup__closecard');
-const saveButton = document.querySelector('.popup__savecard');
+let saveButton = document.querySelector('.popup__savecard');
 const cardsContainer = document.querySelector('.elements');
 let nameProf = document.querySelector('.profile__text');
 let jobProf = document.querySelector('.profile__subtitle');
@@ -15,6 +15,7 @@ let popupSave = document.querySelector('.popup__form');
 let formCardElement = document.querySelector('.card__forms');
 let nameInputPlace = formCardElement.querySelector('.popup__place_name_pp');
 let photoInputPlace = formCardElement.querySelector('.popup__place_photo_pp');
+let popupCardSave = document.querySelector('.popup__cardform');
 const initialCards = [
     {
       name: 'Архыз',
@@ -74,8 +75,9 @@ const closePopupCard = function() {
 
 //Функция добавления карточек
 const addimage = function(nameValue, imageValue) {
+    console.log("ВЫзвана функция addimage")
     const cardContainer = document.createElement('div');
-    cardContainer = classList.add('.elements__cards');
+    cardContainer.classList.add('.elements__cards');
 
 
 //Создаем элемент h2 и кладем его в переменную
@@ -89,7 +91,7 @@ elementText.textContent = nameValue;
 
 const elementImage = document.createElement('img');
 elementImage.classList.add('.elements__rectangle');
-elementImage.textContent = imageValue;
+elementImage.src = imageValue;
 
 //Функция нажатия кнопки лайк
 const likeElement = document.createElement('button');
@@ -99,18 +101,23 @@ cardContainer.append(elementText, elementImage, likeElement);
 cardsContainer.append(cardContainer);
 }
 
-saveButton.addEventListener('click', function() {
+// saveButton.addEventListener('click', 
+function cardSubmitHandler (event) {
+    console.log('Любимушкин код');
+    event.preventDefault();
     const namePlace = document.querySelector('.popup__place_name_pp');
     const imagePlace = document.querySelector('.popup__place_photo_pp');
+
+    addimage(namePlace.value, imagePlace.value)
 
     namePlace.value = '';
     imagePlace.value = '';
     closePopupCard();
-})
+};
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 popupSave.addEventListener('submit', formSubmitHandler);
 popupOpenCardElement.addEventListener('click', openPopupCard);
 popupCloseCardElement.addEventListener('click', closePopupCard);
-saveButton.addEventListener('submit', formSubmitHandler);
+popupCardSave.addEventListener('submit', cardSubmitHandler);
