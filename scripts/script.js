@@ -74,7 +74,7 @@ const closePopupCard = function() {
 };
 
 //Функция добавления карточек
-function addCards (imagePlaceValue, namePlaceValue) {
+function addCards (namePlaceValue, imagePlaceValue) {
     const elementsTemplate = document.querySelector('#elements-template').content;
     const cardsElement = elementsTemplate.querySelector('.elements__cards').cloneNode(true);
     cardsElement.querySelector('.elements__text').textContent = namePlaceValue;
@@ -84,7 +84,7 @@ function addCards (imagePlaceValue, namePlaceValue) {
         evt.target.classList.toggle('elements__like_active');
         });
 
-    cardsContainer.append(cardsElement);
+    cardsContainer.prepend(cardsElement);
 }
 
 // Функция сохранения измнений в попапе
