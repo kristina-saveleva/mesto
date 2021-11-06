@@ -4,8 +4,9 @@ const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__image');
 const popupOpenCardElement = document.querySelector('.profile__button')
 const popupCloseCardElement = popupcardElement.querySelector('.popup__closecard');
-let saveButton = document.querySelector('.popup__savecard');
+const elementsTemplate = document.querySelector('#elements-template').content;
 const cardsContainer = document.querySelector('.elements');
+let saveButton = document.querySelector('.popup__savecard');
 let nameProf = document.querySelector('.profile__text');
 let jobProf = document.querySelector('.profile__subtitle');
 let formElement = document.querySelector('.popup__forms');
@@ -75,21 +76,17 @@ const closePopupCard = function() {
 
 //Функция добавления карточек
 function addCards (namePlaceValue, imagePlaceValue) {
-    const elementsTemplate = document.querySelector('#elements-template').content;
-    const cardsElement = elementsTemplate.querySelector('.elements__cards').cloneNode(true);
+    let cardsElement = elementsTemplate.querySelector('.elements__cards').cloneNode(true);
     cardsElement.querySelector('.elements__text').textContent = namePlaceValue;
-    cardsElement.querySelector('.elements__rectangle').textContent = imagePlaceValue;
+    cardsElement.querySelector('.elements__rectangle').src = imagePlaceValue;
     cardsElement.querySelector('.elements__like').addEventListener('click', function(evt){
-        console.log('kfqr');
         evt.target.classList.toggle('elements__like_active');
         });
-
     cardsContainer.prepend(cardsElement);
 }
 
 // Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
-    console.log('TRY код');
     event.preventDefault();
     const namePlace = document.querySelector('.popup__place_name_pp');
     const imagePlace = document.querySelector('.popup__place_photo_pp');
@@ -100,6 +97,11 @@ function cardSubmitHandler (event) {
     imagePlace.value = '';
     closePopupCard();
 };
+
+//Функция открытия 6 карточек
+initialCards.forEach(function(element) {
+    addCards(element.name, element.link);
+});
 
 
 
