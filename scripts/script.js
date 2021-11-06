@@ -64,10 +64,11 @@ function formSubmitHandler (event) {
     closePopup();
 };
 
-//Функция открытия попапа карточек
+//Функция открытия попапа
 const openPopupCard = function() {
     popupcardElement.classList.add('popup_opened');
-};
+}
+
 
 //Функция закрытия попапа
 const closePopupCard = function() {
@@ -83,7 +84,7 @@ function addCards (namePlaceValue, imagePlaceValue) {
         evt.target.classList.toggle('elements__like_active');
         });
     cardsContainer.prepend(cardsElement);
-}
+
 
 // Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
