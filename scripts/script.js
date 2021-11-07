@@ -17,6 +17,7 @@ let formCardElement = document.querySelector('.card__forms');
 let nameInputPlace = formCardElement.querySelector('.popup__place_name_pp');
 let photoInputPlace = formCardElement.querySelector('.popup__place_photo_pp');
 let popupCardSave = document.querySelector('.popup__cardform');
+let deleteCardsElement = document.querySelector('.elements__delete');
 const initialCards = [
     {
       name: 'Архыз',
@@ -84,7 +85,15 @@ function addCards (namePlaceValue, imagePlaceValue) {
         evt.target.classList.toggle('elements__like_active');
         });
     cardsContainer.prepend(cardsElement);
+    
+    const deleteCards = document.querySelector('.elements__delete');
+    deleteCards.addEventListener('click', function() {
+        const cardsDelete = deleteCards.closest('.elements__cards');
+        cardsDelete.remove();
+    });
     }
+
+
 
 // Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
