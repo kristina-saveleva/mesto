@@ -5,12 +5,12 @@
     width: 18px;
     height: 19px;
     position: absolute;
-    top: 20px; 
+    top: 20px;
     right: 20px;
     border: 0;
     cursor: pointer;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0);;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .elements__delete:hover{
