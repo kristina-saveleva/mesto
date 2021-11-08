@@ -115,6 +115,7 @@ function addCards (namePlaceValue, imagePlaceValue) {
     const openImage = document.querySelector('.elements__rectangle');
     openImage.addEventListener('click', function() {
       popupImage.querySelector('.popup__photo').src = imagePlaceValue;
+      popupImage.querySelector('.popup__figcaption').textContent = namePlaceValue;
       mainOpenPopup(popupImage);
     });
     }
