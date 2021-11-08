@@ -1,5 +1,5 @@
 const popupElement = document.querySelector('.popup');
-const popupcardElement = document.querySelector('.popup__card');
+const popupcardElement = document.querySelector('.popup-card');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__image');
 const popupOpenCardElement = document.querySelector('.profile__button')
