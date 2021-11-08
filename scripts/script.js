@@ -6,7 +6,7 @@ const popupOpenCardElement = document.querySelector('.profile__button')
 const popupCloseCardElement = popupcardElement.querySelector('.popup__closecard');
 const elementsTemplate = document.querySelector('#elements-template').content;
 const cardsContainer = document.querySelector('.elements');
-const popupImage = document.querySelector('.popup__image');
+const popupImage = document.querySelector('.popup-image');
 const popupOpenImage = document.querySelector('.elements__rectangle');
 const popupCloseImageElement = popupImage.querySelector('.popup__closeimage');
 let saveButton = document.querySelector('.popup__savecard');
@@ -17,8 +17,8 @@ let nameInput = formElement.querySelector('.popup__explane_name_pp');
 let jobInput = formElement.querySelector('.popup__explane_job_pp');
 let popupSave = document.querySelector('.popup__form');
 let formCardElement = document.querySelector('.popup-cardforms');
-let nameInputPlace = formCardElement.querySelector('.popup__place_name_pp');
-let photoInputPlace = formCardElement.querySelector('.popup__place_photo_pp');
+let nameInputPlace = formCardElement.querySelector('.popup-place_name_pp');
+let photoInputPlace = formCardElement.querySelector('.popup-place_photo_pp');
 let popupCardSave = document.querySelector('.popup__cardform');
 let deleteCardsElement = document.querySelector('.elements__delete');
 let imageCard = document.querySelector('.popup__photo');
@@ -123,8 +123,8 @@ function addCards (namePlaceValue, imagePlaceValue) {
 // Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
     event.preventDefault();
-    const namePlace = document.querySelector('.popup__place_name_pp');
-    const imagePlace = document.querySelector('.popup__place_photo_pp');
+    const namePlace = document.querySelector('.popup-place_name_pp');
+    const imagePlace = document.querySelector('.popup-place_photo_pp');
 
     addCards(namePlace.value, imagePlace.value)
 
