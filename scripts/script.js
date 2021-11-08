@@ -17,8 +17,8 @@ let nameInput = formElement.querySelector('.popup__explane_name_pp');
 let jobInput = formElement.querySelector('.popup__explane_job_pp');
 let popupSave = document.querySelector('.popup__form');
 let formCardElement = document.querySelector('.popup-cardforms');
-let nameInputPlace = formCardElement.querySelector('.popup__forms_name-pp');
-let photoInputPlace = formCardElement.querySelector('.popup__forms_photo-pp');
+let nameInputPlace = formCardElement.querySelector('.popup__explane_names-pp');
+let photoInputPlace = formCardElement.querySelector('.popup__explane_photos-pp');
 let popupCardSave = document.querySelector('.popup__cardform');
 let deleteCardsElement = document.querySelector('.elements__delete');
 let imageCard = document.querySelector('.popup__photo');
@@ -123,8 +123,8 @@ function addCards (namePlaceValue, imagePlaceValue) {
 // Функция сохранения измнений в попапе
 function cardSubmitHandler (event) {
     event.preventDefault();
-    const namePlace = document.querySelector('.popup__forms_name-pp');
-    const imagePlace = document.querySelector('.popup__forms_photo-pp');
+    const namePlace = document.querySelector('.popup__explane_names-pp');
+    const imagePlace = document.querySelector('.popup__explane_photos-pp');
 
     addCards(namePlace.value, imagePlace.value)
 
