@@ -22,8 +22,8 @@
 @import url('../blocks/popup-image/popup-image.css');
 @import url('../blocks/popup/__closeimage/popup__closeimage.css');
 @import url('../blocks/popup/__photo/popup__photo.css');
-@import url('../blocks/popup-place/_photo_pp/popup__place_photo_pp.css');
-@import url('../blocks/popup-place/_name_pp/popup__place_photo_pp.css');
+@import url('../blocks/popup/__forms/_name_pp/popup__forms_name_pp.css');
+@import url('../blocks/popup/__forms/_photo_pp/popup__forms_photo_pp.css');
 @import url('../blocks/popup-cardforms/popup-cardforms.css');
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
