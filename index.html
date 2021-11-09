@@ -9,8 +9,8 @@
     <meta charset="UTF-8" />
 </head>
 
-<body>
-    <div class="page">
+<body class="page">
+    <div>
         <header class="header">
             <img src="./image/Vector.svg" alt="Логотип" class="header__logo">
         </header>
@@ -29,15 +29,15 @@
             <section class="elements">
                 
             </section>
-            <div class="popup">
-                <div class="popup__form">
+            <div class="popup popup-profile">
+                <div class="popup__form popup__profileform">
                     <button class="popup__close" type="button"></button>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <div class="popup__container">
                         <form class="popup__forms" name="popupForm">
-                            <input class="popup__explane popup__explane_name_pp" type="text" placeholder value=""
+                            <input class="popup__explane popup__explane_name-pp" type="text" placeholder value=""
                                 name="name" id="name" minlength="1" maxlength="15" required>
-                            <input class="popup__explane popup__explane_job_pp" type="text" placeholder value="" name="job"
+                            <input class="popup__explane popup__explane_job-pp" type="text" placeholder value="" name="job"
                                 id="job" minlength="1" maxlength="150" required>
                             <button class="popup__save" type="submit">Сохранить</button>
                         </form>
@@ -49,7 +49,7 @@
                     <button class="popup__close popup__closecard" type="button"></button>
                     <h2 class="popup__title">Новое место</h2>
                     <div class="popup__container">
-                        <form class="popup__forms popup-cardforms" name="popupForm">
+                        <form class="popup__forms popup-cardforms" name="popupFormCards">
                             <input class="popup__explane popup__explane_names-pp" type="text" placeholder="Название" value=""
                                 name="name" id="names" minlength="1" maxlength="15" required>
                             <input class="popup__explane popup__explane_photos-pp" type="text" placeholder="Ссылка на картинку" value="" name="job"
@@ -62,7 +62,7 @@
             <div class="popup popup-image">
                 <div class="popup__container popup__image-container">
                     <button class="popup__close popup__closeimage" type="button"></button>
-                    <img src="Архыз" class="popup__photo">
+                    <img src="" class="popup__photo">
                     <p class="popup__figcaption"></p>
                 </div>
             </div>
