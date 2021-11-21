@@ -1,2 +1,16 @@
 .profile__container{
+    overflow: hidden;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 930px) {
+    .profile__container{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile__container{
+        max-width: 280px;
+    }
 }

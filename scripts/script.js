@@ -112,7 +112,7 @@ function createCard(namePlaceValue, imagePlaceValue) {
   const cardsElement = elementsTemplate.querySelector('.elements__cards').cloneNode(true);
   cardsElement.querySelector('.elements__text').textContent = namePlaceValue;
   cardsElement.querySelector('.elements__rectangle').src = imagePlaceValue;
-  cardsElement.querySelector('.elements__rectangle').url = namePlaceValue;
+  cardsElement.querySelector('.elements__rectangle').alt = namePlaceValue;
   cardsElement.querySelector('.elements__like').addEventListener('click', function (evt) {
     evt.target.classList.toggle('elements__like_active');
   });
