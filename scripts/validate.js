@@ -2,7 +2,7 @@ const config = {
     forms: '.popup__forms',
     inputSelector: '.popup__explane',
     submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__button_invalid',
+    inactiveButtonClass: 'popup__save_invalid',
     inputErrorClass: 'form__input_type_error',
 };
 
