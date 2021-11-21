@@ -71,6 +71,13 @@ const closePopupProfile = function () {
   closePopup(profilePopupElement);
 };
 
+//Функция закрытия попапа кликом на оверлей
+const closePopupByclickOverlay = function (event) {
+  if (event.target === event.currentTarget) {
+    closePopup(event.target);
+  }
+};
+
 //функция сохранения данных из попапа в профиль
 function submitProfileForm(event) {
   event.preventDefault();
@@ -151,3 +158,6 @@ popupOpenCardElement.addEventListener('click', openPopupCard);
 popupCloseCardElement.addEventListener('click', closePopupCard);
 popupCardSave.addEventListener('submit', cardSubmitHandler);
 popupCloseImageElement.addEventListener('click', closePopupImage);
+profilePopupElement.addEventListener('click', closePopupByclickOverlay);
+popupcardElement.addEventListener('click', closePopupByclickOverlay);
+popupImage.addEventListener('click', closePopupByclickOverlay);

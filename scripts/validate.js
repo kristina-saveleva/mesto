@@ -1,20 +1,21 @@
-enableValidation({
+const config = {
     forms: '.popup__forms',
-    inputSelector: 'popup__explane',
-    submitButtonSelector: '..popup__save',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-});
+    inputSelector: '.popup__explane',
+    submitButtonSelector: '.popup__save',
+    inactiveButtonClass: 'popup__button_invalid',
+    inputErrorClass: 'form__input_type_error',
+};
+
+enableValidation(config);
 
 function enableValidation(configObj) {
     const forms = document.querySelectorAll(configObj.forms);
 
-    forms.forEach(function (item, index){addListenersToForm(item, configObj)});
+    forms.forEach(addListenersToForm);
 }
 
-function addListenersToForm(form, configObj) {
-    const inputs = Array.from(form.querySelectorAll(configObj.inputSelector));
+function addListenersToForm(form) {
+    const inputs = Array.from(form.querySelectorAll(config.inputSelector));
 
     inputs.forEach(addListenersToInput)
 
@@ -29,7 +30,7 @@ function handleFormSubmit(evt) {
     evt.preventDefault();
 
     const form = evt.target;
-    const inputs = Array.from(form.querySelectorAll('.popup__explane'));
+    const inputs = Array.from(form.querySelectorAll(config.inputSelector));
 
     const data = inputs.reduce((acc, input) => {
         const key = input.name;
@@ -48,7 +49,7 @@ function toggleButton(form) {
     const isFormInvalid = !form.checkValidity();
 
     button.disabled = isFormInvalid;
-    button.classList.toggle('popup__button_invalid', isFormInvalid);
+    button.classList.toggle(config.inactiveButtonClass, isFormInvalid);
 }
 
 function addListenersToInput(input) {
@@ -61,7 +62,7 @@ function handleFieldValidation(evt) {
     element.setCustomValidity('');
 
     element.classList.toggle(
-        'form__input_type_error',
+        config.inputErrorClass,
         !element.validity.valid
     );
 
