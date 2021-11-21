@@ -52,11 +52,13 @@ const initialCards = [
 //Функция открытия попапа общая
 const openPopup = function (open) {
   open.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByEsc);
 }
 
 //Функция закрытия попапа общая
 const closePopup = function (close) {
   close.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByEsc);
 }
 
 //Функция открытия попапа с занесением текущих данных из профиля в value
@@ -75,6 +77,15 @@ const closePopupProfile = function () {
 const closePopupByclickOverlay = function (event) {
   if (event.target === event.currentTarget) {
     closePopup(event.target);
+  }
+};
+
+//функция закрытия попапа на src
+function closePopupByEsc(event) {
+  if(event.key === "Escape"){
+    closePopup(profilePopupElement);
+    closePopup(popupcardElement);
+    closePopup(popupImage);
   }
 };
 
