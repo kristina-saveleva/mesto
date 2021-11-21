@@ -36,10 +36,10 @@
                     <div class="popup__container">
                         <form class="popup__forms" name="popupForm" novalidate>
                             <input class="form__input_type_error popup__explane popup__explane_name-pp" type="text" placeholder value=""
-                                name="name" id="name" minlength="2" maxlength="15" required>
+                                name="name" id="name" minlength="2" maxlength="40" required>
                             <span id="name-error" class="error"></span>
                             <input class="form__input_type_error popup__explane popup__explane_job-pp" type="text" placeholder value="" name="job"
-                                id="job" minlength="2" maxlength="150" required>
+                                id="job" minlength="2" maxlength="200" required>
                             <span id="job-error" class="error"></span>
                             <button class="popup__save popup__button_invalid" type="submit" disabled>Сохранить</button>
                         </form>
@@ -53,11 +53,11 @@
                     <div class="popup__container">
                         <form class="popup__forms popup-cardforms" name="popupFormCards" novalidate>
                             <input class="form__input_type_error popup__explane popup__explane_names-pp" type="text" placeholder="Название" value=""
-                                name="place" id="place" minlength="2" maxlength="15" required>
+                                name="place" id="place" minlength="2" maxlength="30" required>
                             <span id="place-error" class="error"></span>
-                            <input class="form__input_type_error popup__explane popup__explane_photos-pp" type="text" placeholder="Ссылка на картинку" value="" name="link"
+                            <input class="form__input_type_error popup__explane popup__explane_photos-pp" type="url" placeholder="Ссылка на картинку" value="" name="link"
                                 id="link" minlength="1" maxlength="150" required>
-                            <span id="photo-error" class="error"></span>
+                            <span id="link-error" class="error"></span>
                             <button class="popup__save popup__savecard popup__button_invalid" type="submit" disabled>Сохранить</button>
                         </form>
                     </div>
