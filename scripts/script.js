@@ -63,9 +63,10 @@ const closePopup = function (close) {
 
 //Функция открытия попапа с занесением текущих данных из профиля в value
 const openPopupProfile = function () {
-  openPopup(profilePopupElement);
   nameInput.value = nameProf.textContent;
   jobInput.value = jobProf.textContent;
+  openPopup(profilePopupElement);
+  setEventListeners(profilePopupElement.querySelector('.popup__forms'));
 };
 
 //Функция закрытия попапа
@@ -80,7 +81,7 @@ const closePopupByclickOverlay = function (event) {
   }
 };
 
-//функция закрытия попапа на src
+//функция закрытия попапа на Esc
 function closePopupByEsc(event) {
   if(event.key === "Escape"){
     closePopup(profilePopupElement);
@@ -97,12 +98,13 @@ function submitProfileForm(event) {
   closePopupProfile();
 };
 
-//Функция открытия попапа
+//Функция открытия попапа карт
 const openPopupCard = function () {
   openPopup(popupcardElement);
+  resetInputs(popupcardElement.querySelector('.popup__forms'));
 }
 
-//Функция закрытия попапа
+//Функция закрытия попапа карт
 const closePopupCard = function () {
   closePopup(popupcardElement);
 };
@@ -127,6 +129,7 @@ function createCard(namePlaceValue, imagePlaceValue) {
   openImage.addEventListener('click', function () {
     popupImage.querySelector('.popup__photo').src = imagePlaceValue;
     popupImage.querySelector('.popup__figcaption').textContent = namePlaceValue;
+    popupImage.querySelector('.popup__photo').alt = namePlaceValue;
     openPopup(popupImage);
   });
 

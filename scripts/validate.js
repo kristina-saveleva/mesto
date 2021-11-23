@@ -25,29 +25,34 @@ const showInputError = (formElement, inputElement, errorMessage) => {
       hideInputError(formElement, inputElement);
     }
   };
+
+  function resetInputs(formElement){
+    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+    inputList.forEach((inputElement) => {
+      inputElement.value = '';
+      hideInputError(formElement, inputElement);
+    });
+  }
   
   const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
     const buttonElement = formElement.querySelector(config.submitButtonSelector);
-
+    
     // чтобы проверить состояние кнопки в самом начале
     toggleButtonState(inputList, buttonElement);
-
+    
     inputList.forEach((inputElement) => {
+      checkInputValidity(formElement, inputElement);
       inputElement.addEventListener('input', function () {
         checkInputValidity(formElement, inputElement);
         toggleButtonState(inputList, buttonElement);
       });
     });
   };
-  
+
   function enableValidation() {
     const formList = Array.from(document.querySelectorAll(config.forms));;
-    formList.forEach((formElement) => {
-    formElement.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-  
+    formList.forEach((formElement) => {  
       setEventListeners(formElement);
   });
   };
@@ -65,5 +70,5 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     buttonElement.classList.add(config.inactiveButtonClass);
   } else {
     buttonElement.classList.remove(config.inactiveButtonClass);
-  }
-  }
+  };
+  };
