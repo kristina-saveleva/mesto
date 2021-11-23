@@ -101,6 +101,7 @@ function submitProfileForm(event) {
 //Функция открытия попапа карт
 const openPopupCard = function () {
   openPopup(popupcardElement);
+  setEventListeners(popupcardElement.querySelector('.popup__forms'));
   resetInputs(popupcardElement.querySelector('.popup__forms'));
 }
 
