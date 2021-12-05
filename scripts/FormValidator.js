@@ -1,7 +1,9 @@
 export class FormValidator {
-    constructor(obj, formElement) {
+    constructor(obj, formElement, button, inputs) {
         this._formElement = formElement;
         this._obj = obj;
+        this._button = button;
+        this._inputs = inputs;
     }
 
     enableValidation() {
@@ -10,19 +12,11 @@ export class FormValidator {
 
     _addListenersToForm() {
         //ищет все инпуты в форме
-        const inputs = [...this._formElement.querySelectorAll(this._obj.inputSelector)];
+        this._inputs = [...this._formElement.querySelectorAll(this._obj.inputSelector)];
         // добавляет для каждого инпута слушатель
-        this._addListenersToInputs(inputs);
-        //добавляет слушатель форме при событии сабмит
-        this._formElement.addEventListener('submit', (event) => {
-            this._handleSubmit(event, inputs);
-        });
-        //добавляет слушатель форме при событии инпут
-        this._formElement.addEventListener('input', (event) => {
-            this._handleFormInput(event);
-        });
+        this._addListenersToInputs(this._inputs);
         //устанавливает состояние кнопки
-        this._setSubmitButtonState();
+        this.setSubmitButtonState();
     }
 
     _addListenersToInputs(inputs) {
@@ -33,22 +27,10 @@ export class FormValidator {
         });
     }
 
-    _handleSubmit(event, inputs) {
-        event.preventDefault();
-        //находим кнопку сохранения
-        const button = document.querySelector('.popup__save');
-        button.disabled = true;
-        button.classList.add('popup__save_invalid');
-    }
-
-    _handleFormInput() {
-        this._setSubmitButtonState();
-    }
-
-    _setSubmitButtonState() {
-        const button = this._formElement.querySelector(this._obj.submitButtonSelector);
-        button.disabled = !this._formElement.checkValidity();
-        button.classList.toggle(this._obj.inactiveButtonClass, !this._formElement.checkValidity());
+    setSubmitButtonState() {
+        this._button = this._formElement.querySelector(this._obj.submitButtonSelector);
+        this._button.disabled = !this._formElement.checkValidity();
+        this._button.classList.toggle(this._obj.inactiveButtonClass, !this._formElement.checkValidity());
     }
 
     _handleFieldValidation(event) {
@@ -64,6 +46,7 @@ export class FormValidator {
         errorContainer.textContent = element.validationMessage;
         //добавляет или убирает класс с ошибкой в зависимости от условия
         element.classList.toggle(this._obj.inputErrorClass, !element.validity.valid);
+        this.setSubmitButtonState();
     }
 
     _validateLength(element) {

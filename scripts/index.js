@@ -4,25 +4,23 @@ import { FormValidator } from "./FormValidator.js";
 const addProfileForm = document.querySelector('.popup-profileforms');
 const addNewCardForm = document.querySelector('.popup-cardforms');
 const profilePopupElement = document.querySelector('.popup-profile');
-const popupcardElement = document.querySelector('.popup-card');
+const popupСardElement = document.querySelector('.popup-card');
 const popupCloseButtonElement = profilePopupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__image');
 const popupOpenCardElement = document.querySelector('.profile__button')
-const popupCloseCardElement = popupcardElement.querySelector('.popup__closecard');
+const popupCloseCardElement = popupСardElement.querySelector('.popup__closecard');
 const popupImage = document.querySelector('.popup-image');
 const popupCloseImageElement = popupImage.querySelector('.popup__closeimage');
 const nameProf = document.querySelector('.profile__text');
 const jobProf = document.querySelector('.profile__subtitle');
 const nameInput = document.querySelector('.popup__explane_name-pp');
 const jobInput = document.querySelector('.popup__explane_job-pp');
-const fieldsNewCards = document.querySelectorAll('.popup__explane_card');
-const popupSave = document.querySelector('.popup__profileform');
+const popupSaveProfile = document.querySelector('.popup__profileform');
 const popupCardSave = document.querySelector('.popup__cardform');
 const popupImageContainer = document.querySelector('.popup__photo');
 const popupImageText = document.querySelector('.popup__figcaption');
-const namecard = document.querySelector('.popup__explane_names-pp');
-const placecard = document.querySelector('.popup__explane_photos-pp');
-const buttonCard = document.querySelector('.popup__savecard');
+const nameCard = document.querySelector('.popup__explane_names-pp');
+const placeCard = document.querySelector('.popup__explane_photos-pp');
 const initialCards = [
   {
     name: 'Архыз',
@@ -64,7 +62,7 @@ const config = {
   inputErrorClass: 'popup__explane_invalid', 
 }; 
 
-const formValidatorAdd = new FormValidator(config, addProfileForm);
+const formValidatorProfile = new FormValidator(config, addProfileForm);
 const formValidatorPlaceAdd = new FormValidator(config, addNewCardForm);
 
 function createCard(item) {
@@ -82,9 +80,8 @@ initialCards.forEach((item) => {
 //функция закрытия попапа на Esc
 function closePopupByEsc(event) {
   if(event.key === "Escape"){
-    closePopup(profilePopupElement);
-    closePopup(popupcardElement);
-    closePopup(popupImage);
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
 };
 
@@ -110,11 +107,8 @@ const openPopupProfile = function () {
 
 //Функция открытия попапа карт
 const openPopupCard = function () {
-  openPopup(popupcardElement);
-  namecard.value = "";
-  placecard.value = "";
-  buttonCard.disabled = true;
-  buttonCard.classList.add('popup__save_invalid');
+  openPopup(popupСardElement);
+  formValidatorPlaceAdd.setSubmitButtonState();
 }
 
 function openImage(name, link) {
@@ -135,15 +129,17 @@ function submitProfileForm(event) {
 // Функция сохранения измнений в попапе 
 function cardSubmitHandler(evt) {
   evt.preventDefault();
-  const placeName = fieldsNewCards[0].value;
-  const imageLink = fieldsNewCards[1].value;
+  const placeName = nameCard.value;
+  const imageLink = placeCard.value;
   const data = {
   name:placeName,
   link:imageLink,
   }
   const card = createCard(data);
   document.querySelector('.elements').prepend(card);
-  closePopup(popupcardElement);
+  closePopup(popupСardElement);
+  nameCard.value = ""; 
+  placeCard.value = ""; 
 }; 
 
 //Функция закрытия попапа
@@ -160,7 +156,7 @@ const closePopupByclickOverlay = function (event) {
 
 //Функция закрытия попапа карт
 const closePopupCard = function () {
-  closePopup(popupcardElement);
+  closePopup(popupСardElement);
 };
 
 //Функция закрытия попапа картинок
@@ -170,14 +166,14 @@ const closePopupImage = function () {
 
 popupOpenButtonElement.addEventListener('click', openPopupProfile);
 popupCloseButtonElement.addEventListener('click', closePopupProfile);
-popupSave.addEventListener('submit', submitProfileForm);
+popupSaveProfile.addEventListener('submit', submitProfileForm);
 popupOpenCardElement.addEventListener('click', openPopupCard);
 popupCloseCardElement.addEventListener('click', closePopupCard);
 popupCardSave.addEventListener('submit', cardSubmitHandler);
 popupCloseImageElement.addEventListener('click', closePopupImage);
 profilePopupElement.addEventListener('click', closePopupByclickOverlay);
-popupcardElement.addEventListener('click', closePopupByclickOverlay);
+popupСardElement.addEventListener('click', closePopupByclickOverlay);
 popupImage.addEventListener('click', closePopupByclickOverlay);
 
-formValidatorAdd.enableValidation();
+formValidatorProfile.enableValidation();
 formValidatorPlaceAdd.enableValidation();
