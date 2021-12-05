@@ -34,14 +34,14 @@
                     <button class="popup__close" type="button"></button>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <div class="popup__container">
-                        <form class="popup__forms" name="popupForm" novalidate>
-                            <input class="popup__explane_invalid popup__explane popup__explane_name-pp" type="text" placeholder value=""
+                        <form class="popup__forms popup-profileforms" name="popupForm" novalidate>
+                            <input class="popup__explane popup__explane_name-pp" type="text" placeholder value=""
                                 name="name" id="name" minlength="2" maxlength="40" required>
                             <span id="name-error" class="error"></span>
-                            <input class="popup__explane_invalid popup__explane popup__explane_job-pp" type="text" placeholder value="" name="job"
+                            <input class="popup__explane popup__explane_job-pp" type="text" placeholder value="" name="job"
                                 id="job" minlength="2" maxlength="200" required>
                             <span id="job-error" class="error"></span>
-                            <button class="popup__save popup__save_invalid" type="submit">Сохранить</button>
+                            <button class="popup__save" type="submit">Сохранить</button>
                         </form>
                     </div>
                 </div>
@@ -52,10 +52,10 @@
                     <h2 class="popup__title">Новое место</h2>
                     <div class="popup__container">
                         <form class="popup__forms popup-cardforms" name="popupFormCards" novalidate>
-                            <input class="popup__explane_invalid popup__explane popup__explane_names-pp" type="text" placeholder="Название" value=""
+                            <input class="popup__explane popup__explane_card popup__explane_names-pp" type="text" placeholder="Название" value=""
                                 name="place" id="place" minlength="2" maxlength="30" required>
                             <span id="place-error" class="error"></span>
-                            <input class="popup__explane_invalid popup__explane popup__explane_photos-pp" type="url" placeholder="Ссылка на картинку" value="" name="link"
+                            <input class="popup__explane popup__explane_card popup__explane_photos-pp" type="url" placeholder="Ссылка на картинку" value="" name="link"
                                 id="link" minlength="1" maxlength="150" required>
                             <span id="link-error" class="error"></span>
                             <button class="popup__save popup__savecard popup__save_invalid" type="submit">Сохранить</button>
@@ -85,7 +85,6 @@
         </div>
     </template>
     
-    <script src="./scripts/script.js"></script>
-    <script src="scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
