@@ -1,9 +1,9 @@
 export class FormValidator {
-    constructor(obj, formElement, button, inputs) {
+    constructor(obj, formElement) {
         this._formElement = formElement;
         this._obj = obj;
-        this._button = button;
-        this._inputs = inputs;
+        this._button = this._formElement.querySelector(this._obj.submitButtonSelector);
+        this._inputs = [...this._formElement.querySelectorAll(this._obj.inputSelector)];
     }
 
     enableValidation() {
@@ -11,8 +11,6 @@ export class FormValidator {
     }
 
     _addListenersToForm() {
-        //ищет все инпуты в форме
-        this._inputs = [...this._formElement.querySelectorAll(this._obj.inputSelector)];
         // добавляет для каждого инпута слушатель
         this._addListenersToInputs(this._inputs);
         //устанавливает состояние кнопки
@@ -28,7 +26,6 @@ export class FormValidator {
     }
 
     setSubmitButtonState() {
-        this._button = this._formElement.querySelector(this._obj.submitButtonSelector);
         this._button.disabled = !this._formElement.checkValidity();
         this._button.classList.toggle(this._obj.inactiveButtonClass, !this._formElement.checkValidity());
     }
