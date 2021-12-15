@@ -1,6 +1,6 @@
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-import './pages/index.css';
+import '../pages/index.css';
+import { Card } from "../scripts/Card.js";
+import { FormValidator } from "../scripts/FormValidator.js";
 
 const addProfileForm = document.querySelector('.popup-profileforms');
 const addNewCardForm = document.querySelector('.popup-cardforms');
