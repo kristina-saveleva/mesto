@@ -1,10 +1,10 @@
 export class Card{
-    constructor(data, cardSelector, openImage){
+    constructor(data, cardSelector, {handleCardClick}){
       this._name = data.name;
       this._link = data.link;
       this._alt = data.alt;
       this._cardSelector = cardSelector;
-      this._openImage = openImage;
+      this._handleCardClick = handleCardClick;
     }
     
     _getTemplate() {
@@ -18,7 +18,7 @@ export class Card{
 
       this._element.querySelector('.elements__rectangle').src = this._link;
       this._element.querySelector('.elements__rectangle').alt = this._name;
-      this._element.querySelector('.elements__text').textContent = this._name
+      this._element.querySelector('.elements__text').textContent = this._name;
     
     return this._element;
     }
@@ -38,7 +38,7 @@ export class Card{
             } else if (evt.target.classList.contains('elements__like')) {
                 this._handleLikeClick();
             } else {
-                this._openImage(this._name, this._link);
+                this._handleCardClick(this._name, this._link);
             }
         });
     }
