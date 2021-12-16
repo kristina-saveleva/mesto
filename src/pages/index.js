@@ -10,8 +10,8 @@ const formValidatorProfile = new FormValidator(config, addProfileForm);
 const formValidatorPlaceAdd = new FormValidator(config, addNewCardForm);
 const popupWithImage = new PopupWithImage('.popup-image');
 const userInfo = new UserInfo({
-  elementName: '.popup__explane_name-pp',
-  elementInfo: '.popup__explane_job-pp',
+  name: '.popup__explane_name-pp',
+  profession: '.popup__explane_job-pp',
 });
 const popupWithFormCard = new PopupWithForm('.popup-card', {
   submitForms: (formValues) => {
@@ -54,7 +54,7 @@ buttonSave.addEventListener('click', () => {
 popupWithFormProfile.setEventListeners();
 editButton.addEventListener('click', () => {
   const userInfoData = userInfo.getUserInfo();
-  inputName.value = userInfoData.elementName;
-  inputProfession.value = userInfoData.elementInfo;
+  inputName.value = userInfoData.name;
+  inputProfession.value = userInfoData.profession;
   popupWithFormProfile.open();
 });

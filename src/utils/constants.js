@@ -2,8 +2,8 @@ const addProfileForm = document.querySelector('.popup-profileforms');
 const addNewCardForm = document.querySelector('.popup-cardforms');
 const buttonSave = document.querySelector('.popup__save');
 const editButton = document.querySelector('.profile__image');
-const inputName = document.forms.add.name;
-const inputProfession = document.forms.add.job;
+const inputName = document.querySelector('.popup__explane_name-pp');
+const inputProfession = document.querySelector('.popup__explane_job-pp');
 const containerSelector = document.querySelector('.elements');
 
 const initialCards = [
@@ -40,9 +40,9 @@ const initialCards = [
 ];
 
 const config = {
-  forms: '.popup__forms', 
-  inputSelector: '.popup__explane', 
-  submitButtonSelector: '.popup__save', 
-  inactiveButtonClass: 'popup__save_invalid', 
-  inputErrorClass: 'popup__explane_invalid', 
-}; 
+  forms: '.popup__forms',
+  inputSelector: '.popup__explane',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_invalid',
+  inputErrorClass: 'popup__explane_invalid',
+};
