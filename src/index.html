@@ -11,11 +11,11 @@
 <body class="page">
     <div>
         <header class="header">
-            <img src="<%=require('../image/Vector.svg')%>" alt="Логотип" class="header__logo">
+            <img src="./image/Vector.svg" alt="Логотип" class="header__logo">
         </header>
         <main>
             <section class="profile">
-                <img src="<%=require('../image/profile__photo.png')%>" alt="фото профиля" class="profile__photo">
+                <img src="./image/profile__photo.png" alt="фото профиля" class="profile__photo">
                 <div class="profile__container">
                     <div class="profile__title">
                         <h1 class="profile__text">Жак-Ив Кусто</h1>
@@ -26,7 +26,7 @@
                 <button class="profile__button" type="button"></button>
             </section>
             <section class="elements">
-                
+
             </section>
             <div class="popup popup-profile">
                 <div class="popup__form popup__profileform">
@@ -37,8 +37,8 @@
                             <input class="popup__explane popup__explane_name-pp" type="text" placeholder value=""
                                 name="name" id="name" minlength="2" maxlength="40" required>
                             <span id="name-error" class="error"></span>
-                            <input class="popup__explane popup__explane_job-pp" type="text" placeholder value="" name="job"
-                                id="job" minlength="2" maxlength="200" required>
+                            <input class="popup__explane popup__explane_job-pp" type="text" placeholder value=""
+                                name="job" id="job" minlength="2" maxlength="200" required>
                             <span id="job-error" class="error"></span>
                             <button class="popup__save" type="submit">Сохранить</button>
                         </form>
@@ -51,13 +51,16 @@
                     <h2 class="popup__title">Новое место</h2>
                     <div class="popup__container">
                         <form class="popup__forms popup-cardforms" name="popupFormCards" novalidate>
-                            <input class="popup__explane popup__explane_card popup__explane_names-pp" type="text" placeholder="Название" value=""
-                                name="place" id="place" minlength="2" maxlength="30" required>
+                            <input class="popup__explane popup__explane_card popup__explane_names-pp" type="text"
+                                placeholder="Название" value="" name="place" id="place" minlength="2" maxlength="30"
+                                required>
                             <span id="place-error" class="error"></span>
-                            <input class="popup__explane popup__explane_card popup__explane_photos-pp" type="url" placeholder="Ссылка на картинку" value="" name="link"
-                                id="link" minlength="1" maxlength="150" required>
+                            <input class="popup__explane popup__explane_card popup__explane_photos-pp" type="url"
+                                placeholder="Ссылка на картинку" value="" name="link" id="link" minlength="1"
+                                maxlength="150" required>
                             <span id="link-error" class="error"></span>
-                            <button class="popup__save popup__savecard popup__save_invalid" type="submit">Сохранить</button>
+                            <button class="popup__save popup__savecard popup__save_invalid"
+                                type="submit">Сохранить</button>
                         </form>
                     </div>
                 </div>
@@ -70,9 +73,9 @@
                 </div>
             </div>
         </main>
-    <footer class="footer">
-        <p class="footer__copyright">© 2021. Кристина Савельева</p>
-    </footer>
+        <footer class="footer">
+            <p class="footer__copyright">© 2021. Кристина Савельева</p>
+        </footer>
     </div>
 
     <template id="elements-template">
@@ -83,7 +86,7 @@
             <button class="elements__like" type="button"></button>
         </div>
     </template>
-    
     <script type="module" src="./pages/index.js"></script>
 </body>
+
 </html>
