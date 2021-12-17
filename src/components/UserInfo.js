@@ -1,18 +1,18 @@
 export class UserInfo {
-    constructor({name, profession}) {
+    constructor({name, job}) {
         this._name = document.querySelector(name);
-        this._profession = document.querySelector(profession);
+        this._job = document.querySelector(job);
     }
 
     getUserInfo() {
         return {
             name: this._name.textContent,
-            profession: this._profession.textContent,
+            job: this._job.textContent,
         }
     }
 
     setUserInfo(data) {
        this._name.textContent = data.name;
-       this._profession.textContent = data.profession;
+       this._job.textContent = data.job;
     }
 }

@@ -21,7 +21,7 @@ export class PopupWithForm extends Popup {
         this._popupForms.reset();
     }
 
-    setEventListeners(card) {
+    setEventListeners() {
         super.setEventListeners();
         this._popup.addEventListener('submit', (evt) => {
             evt.preventDefault();

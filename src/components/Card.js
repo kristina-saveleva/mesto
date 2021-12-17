@@ -16,8 +16,9 @@ export class Card{
       this._element = this._getTemplate();
       this._setEventListeners();
 
-      this._element.querySelector('.elements__rectangle').src = this._link;
-      this._element.querySelector('.elements__rectangle').alt = this._name;
+      const cardData = this._element.querySelector('.elements__rectangle');
+      cardData.src = this._link;
+      cardData.alt = this._name;
       this._element.querySelector('.elements__text').textContent = this._name;
     
     return this._element;
