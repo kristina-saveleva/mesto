@@ -1,11 +1,11 @@
-const addProfileForm = document.querySelector('.popup-profileforms');
-const addNewCardForm = document.querySelector('.popup-cardforms');
-const editButton = document.querySelector('.profile__image');
-const inputName = document.querySelector('.popup__explane_name-pp');
-const inputProfession = document.querySelector('.popup__explane_job-pp');
-const profileAddButton = document.querySelector('.profile__button');
-const containerSelector = '.elements';
-const initialCards = [
+export const addProfileForm = document.querySelector('.popup-profileforms');
+export const addNewCardForm = document.querySelector('.popup-cardforms');
+export const editButton = document.querySelector('.profile__image');
+export const inputName = document.querySelector('.popup__explane_name-pp');
+export const inputProfession = document.querySelector('.popup__explane_job-pp');
+export const profileAddButton = document.querySelector('.profile__button');
+export const containerSelector = '.elements';
+export const initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
@@ -38,7 +38,7 @@ const initialCards = [
   }
 ];
 
-const config = {
+export const config = {
   forms: '.popup__forms',
   inputSelector: '.popup__explane',
   submitButtonSelector: '.popup__save',
