@@ -1,7 +1,6 @@
 {
   "name": "mesto",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -26,5 +25,14 @@
   },
   "dependencies": {
     "core-js": "^3.20.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristina-saveleva/mesto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kristina-saveleva/mesto/issues"
+  },
+  "homepage": "https://github.com/kristina-saveleva/mesto#readme",
+  "description": ""
 }

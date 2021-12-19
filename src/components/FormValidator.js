@@ -13,6 +13,12 @@ export class FormValidator {
     _addListenersToForm() {
         // добавляет для каждого инпута слушатель
         this._addListenersToInputs(this._inputs);
+        this._formElement.addEventListener('submit', (event) => {
+            this._handleSubmit(event, this._inputs);
+        });
+        this._formElement.addEventListener('input', (event) => {
+            this._handleFormInput(event);
+        });
         //устанавливает состояние кнопки
         this.setSubmitButtonState();
     }
@@ -23,6 +29,17 @@ export class FormValidator {
                 this._handleFieldValidation(event);
             });
         });
+    }
+
+    _handleSubmit(event, input) {
+        event.preventDefault();
+        const button = document.querySelector('.popup__savecard');
+        button.disabled = true;
+        button.classList.add('popup__save_invalid');
+    }
+
+    _handleFormInput() {
+        this.setSubmitButtonState();
     }
 
     setSubmitButtonState() {
@@ -43,7 +60,6 @@ export class FormValidator {
         errorContainer.textContent = element.validationMessage;
         //добавляет или убирает класс с ошибкой в зависимости от условия
         element.classList.toggle(this._obj.inputErrorClass, !element.validity.valid);
-        this.setSubmitButtonState();
     }
 
     _validateLength(element) {
